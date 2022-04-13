@@ -36,7 +36,7 @@ public class jdbcConnection {
    public static Connection getConnection()
     {
         try {
-            Connection conn = DriverManager.getConnection("jdbc:postgresql://rwamasirabo-db.cv1tp2j6wufq.us-east-2.rds.amazonaws.com/bankdb?user=postgres&password=Widetechchf01!");
+            Connection conn = DriverManager.getConnection("jdbc:postgresql://rwamasirabo-db.cv1tp2j6wufq.us-east-2.rds.amazonaws.com/postgres?user=postgres&password=Widetechchf01!");
            return conn;
         } catch (SQLException ex) {
            throw new RuntimeException("Error connecting to the database", ex);

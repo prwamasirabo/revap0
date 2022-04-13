@@ -18,13 +18,13 @@ public class BankDAOPostgresImpl implements BankDAO{
             PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, bankUser.getFirstName());
             ps.setString(2, bankUser.getLastName());
-            ps.setString(4, bankUser.getUserName());
-            ps.setString(3, bankUser.getPassword());
-            ps.setString(4, bankUser.getEmail());
+            ps.setString(3, bankUser.getUserName());
+            ps.setString(4, bankUser.getPassword());
+            ps.setString(5, bankUser.getEmail());
             ps.execute();
             ResultSet rs = ps.getGeneratedKeys();
             rs.next();
-            int generatedIDd = rs.getInt( "bankuser_id");
+            int generatedIDd = rs.getInt( "user_id");
             bankUser.setId(generatedIDd);
             return bankUser;
         } catch (SQLException e) {
